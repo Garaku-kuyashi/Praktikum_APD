@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="2409106089_M. Fahrianor_B2_posttest2"/>
+        <attribute name="authors" value="ACER"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-09-18 12:19:18 PM"/>
+        <attribute name="created" value="QUNFUjtERVNLVE9QLUJKQlI2S1E7MjAyNC0wOS0xNzswOToxMDowNyBQTTsyNjUw"/>
+        <attribute name="edited" value="QUNFUjtERVNLVE9QLUJKQlI2S1E7MjAyNC0wOS0xODsxMjoxOToxOCBQTTs0OzI3Njc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NamaBarang" type="String" array="False" size=""/>
+            <declare name="HargaBarang, Diskon, TotalSebelumDiskon, TotalDiskon, TotalSetelahDiskon, SisaDiskon" type="Real" array="False" size=""/>
+            <declare name="JumlahBarang" type="Integer" array="False" size=""/>
+            <input variable="NamaBarang"/>
+            <input variable="HargaBarang"/>
+            <input variable="JumlahBarang"/>
+            <comment text="pada bagian diskon harus memasukkan dua digit terakhir nim yaitu nim saya adalah 89"/>
+            <input variable="Diskon"/>
+            <assign variable="Diskon" expression="Diskon/100"/>
+            <assign variable="TotalSebelumDiskon" expression="JumlahBarang * HargaBarang"/>
+            <assign variable="TotalDiskon" expression="Diskon * TotalSebelumDiskon"/>
+            <assign variable="TotalSetelahDiskon" expression="TotalSebelumDiskon - TotalDiskon"/>
+            <comment text="pada bagian ini diisi dengan 89 karena merupakan dua digit terakhir dari nim pembuat"/>
+            <assign variable="SisaDiskon" expression="89 mod 3"/>
+            <output expression="&quot;Anda membeli &quot;&amp;JumlahBarang &amp; NamaBarang &amp; &quot;, dengan harga satuan &quot;&amp;HargaBarang &amp; &quot;, total sebelum diskon adalah &quot;&amp;TotalSebelumDiskon &amp; &quot;, total diskon adalah &quot;&amp;TotalDiskon &amp; &quot;, dan total yang harus dibayar adalah &quot;&amp;TotalSetelahDiskon  &amp;Diskon &amp; &quot; dibagi dengan 3 sisanya &quot;&amp;SisaDiskon" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
