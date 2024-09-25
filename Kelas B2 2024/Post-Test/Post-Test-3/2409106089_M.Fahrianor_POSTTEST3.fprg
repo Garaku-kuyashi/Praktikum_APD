@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="berat badan"/>
+        <attribute name="authors" value="ACER"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-09-25 08:06:40 PM"/>
+        <attribute name="created" value="QUNFUjtERVNLVE9QLUJKQlI2S1E7MjAyNC0wOS0yMzswOTo0MDozNCBQTTsyNjUw"/>
+        <attribute name="edited" value="QUNFUjtERVNLVE9QLUJKQlI2S1E7MjAyNC0wOS0yNTswODowNjo0MCBQTTs1OzI3NjI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="BeratBadanMG, TinggiBadanKM, BMI, TinggiBadan, BeratBadan" type="Real" array="False" size=""/>
+            <declare name="Tipe" type="String" array="False" size=""/>
+            <input variable="BeratBadanMG"/>
+            <input variable="TinggiBadanKM"/>
+            <assign variable="BeratBadan" expression="BeratBadanMG / 1000000"/>
+            <assign variable="TinggiBadan" expression="TinggiBadanKM * 1000"/>
+            <assign variable="BMI" expression="BeratBadan/(TinggiBadan*TinggiBadan)"/>
+            <if expression="BMI &lt;= 18.5">
+                <then>
+                    <assign variable="Tipe" expression="&quot;UNDERWEIGHT&quot;"/>
+                </then>
+                <else>
+                    <if expression="BMI &lt;= 24.9">
+                        <then>
+                            <assign variable="Tipe" expression="&quot;NORMAL&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="BMI &lt;= 29.9">
+                                <then>
+                                    <assign variable="Tipe" expression="&quot;OVERWEIGHT&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="BMI &gt;= 30">
+                                        <then>
+                                            <assign variable="Tipe" expression="&quot;OBESITAS&quot;"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;menurut perhitungan BMI hasilnya adalah &quot;&amp;BMI &amp; &quot;,jadi berdasarkan data menunjukkan bahwa anda berada di tipe &quot;&amp;Tipe" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
